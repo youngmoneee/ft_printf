@@ -6,13 +6,13 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 19:41:06 by youngpar          #+#    #+#             */
-/*   Updated: 2021/07/03 19:55:20 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/14 21:21:30 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-static int		ft_print_opt(t_option *opt, va_list *ap)
+static int	ft_print_opt(t_option *opt, va_list *ap)
 {
 	if (opt->type == 'c')
 		return (ft_print_c(opt, ap));
@@ -20,13 +20,14 @@ static int		ft_print_opt(t_option *opt, va_list *ap)
 		return (ft_print_per(opt));
 	else if (opt->type == 's')
 		return (ft_print_s(opt, ap));
-	else if (opt->type == 'd' || opt->type == 'i' || opt->type == 'u' ||
-			opt->type == 'x' || opt->type == 'X' || opt->type == 'p')
+	else if (opt->type == 'd' || opt->type == 'i' || opt->type == 'u')
+		return (ft_print_d(opt, ap));
+	else if (opt->type == 'x' || opt->type == 'X' || opt->type == 'p')
 		return (ft_print_d(opt, ap));
 	return (0);
 }
 
-static void		ft_print_n(t_option *opt, va_list *ap, int *len)
+static void	ft_print_n(t_option *opt, va_list *ap, int *len)
 {
 	t_return_n	nret;
 
@@ -53,7 +54,7 @@ static void		ft_print_n(t_option *opt, va_list *ap, int *len)
 	}
 }
 
-const char		*ft_check_obj(const char *str, va_list *ap, int *len)
+const char	*ft_check_obj(const char *str, va_list *ap, int *len)
 {
 	t_option	opt;
 	int			*n;

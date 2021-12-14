@@ -6,7 +6,7 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:14:26 by youngpar          #+#    #+#             */
-/*   Updated: 2021/05/08 23:55:23 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/11 22:37:08 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return ((void *)0);
 	ss = ft_strlen(s1);
-	if (!(s3 = (char *)malloc(sizeof(char) * (1 + ss + ft_strlen(s2)))))
+	s3 = (char *)malloc(sizeof(char) * (1 + ss + ft_strlen(s2)));
+	if (!s3)
 		return ((void *)0);
 	while (s1[idx])
 	{

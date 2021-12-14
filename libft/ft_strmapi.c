@@ -6,7 +6,7 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 19:39:14 by youngpar          #+#    #+#             */
-/*   Updated: 2021/05/09 20:09:50 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:42:53 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s || !f)
 		return ((void *)0);
 	len = ft_strlen(s);
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
+	ret = (char *)malloc(sizeof(char) * (len + 1));
+	if (!ret)
 		return ((void *)0);
 	idx = 0;
 	while (idx < len)

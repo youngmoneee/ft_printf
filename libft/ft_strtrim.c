@@ -6,7 +6,7 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 23:56:40 by youngpar          #+#    #+#             */
-/*   Updated: 2021/05/10 21:42:28 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:43:18 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static size_t	ft_end(const char *s1, const char *set)
 	return (len - end);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*ret;
 	size_t		begin;
@@ -63,7 +63,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	if (begin >= end)
 		return (ft_strdup(""));
 	idx = 0;
-	if (!(ret = (char *)malloc(sizeof(char) * (end - begin + 1))))
+	ret = (char *)malloc(sizeof(char) * (end - begin + 1));
+	if (!ret)
 		return (0);
 	while (begin < end)
 		ret[idx++] = (char)s1[begin++];

@@ -6,11 +6,11 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:15:00 by youngpar          #+#    #+#             */
-/*   Updated: 2021/05/04 16:35:53 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/11 22:32:48 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

@@ -6,13 +6,13 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 20:29:08 by youngpar          #+#    #+#             */
-/*   Updated: 2021/05/04 20:31:01 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/11 22:09:59 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isspace(int c)
+int	ft_isspace(int c)
 {
 	if (c == 0x20)
 		return (0x20);

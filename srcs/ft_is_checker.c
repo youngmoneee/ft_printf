@@ -6,13 +6,13 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 19:41:06 by youngpar          #+#    #+#             */
-/*   Updated: 2021/07/03 03:26:01 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:32:58 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int					is_flag(char c)
+int	is_flag(char c)
 {
 	if (c == '-')
 		return (1);
@@ -27,22 +27,22 @@ int					is_flag(char c)
 	return (0);
 }
 
-int					ft_numlen(long long value, t_option *opt, t_number *num)
+int	ft_numlen(long long value, t_option *opt, t_number *num)
 {
 	unsigned int	base;
 	t_ull			tmp;
 
 	base = 10;
 	if (opt->type == 'x' || opt->type == 'X' || opt->type == 'p')
-		if ((opt->flags & (base = 16)) && (value || opt->type == 'p'))
-			num->flglen += 2;
+		base = 16;
+	if ((opt->flags & 16) && (value || opt->type == 'p'))
+		num->flglen += 2;
 	if (value == 0)
 		num->numlen += 1;
 	if (value < 0 && base == 10 && opt->type != 'u')
-	{
 		num->value = value * -1;
+	if (value < 0 && base == 10 && opt->type != 'u')
 		num->flglen += 1;
-	}
 	else if ((opt->flags & 2 || opt->flags & 4) && base == 10)
 		num->flglen += 1;
 	tmp = num->value;
@@ -56,7 +56,7 @@ int					ft_numlen(long long value, t_option *opt, t_number *num)
 	return (num->flglen + num->numlen);
 }
 
-t_ll				ft_get_value(t_option *opt, va_list *ap)
+t_ll	ft_get_value(t_option *opt, va_list *ap)
 {
 	t_ll			value;
 
@@ -73,7 +73,7 @@ t_ll				ft_get_value(t_option *opt, va_list *ap)
 	return (value);
 }
 
-t_ull				ft_get_uvalue(t_option *opt, long long value)
+t_ull	ft_get_uvalue(t_option *opt, long long value)
 {
 	t_ull			val;
 

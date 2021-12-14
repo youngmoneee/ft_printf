@@ -6,13 +6,13 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 20:25:58 by youngpar          #+#    #+#             */
-/*   Updated: 2021/05/15 14:41:10 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/11 22:22:37 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ys_isspace(int c)
+static int	ys_isspace(int c)
 {
 	if (c == 0x20)
 		return (0x20);
@@ -29,7 +29,7 @@ static int		ys_isspace(int c)
 	return (0);
 }
 
-int				ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int			flag;
 	long long	ret;

@@ -6,7 +6,7 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 19:41:06 by youngpar          #+#    #+#             */
-/*   Updated: 2021/07/02 23:01:42 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:20:28 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 typedef unsigned long long	t_ull;
 typedef long long			t_ll;
 
-typedef	struct	s_option
+typedef struct s_option
 {
 	int			flags;
 	int			width;
@@ -25,7 +25,7 @@ typedef	struct	s_option
 	int			type;
 }				t_option;
 
-typedef struct	s_number
+typedef struct s_number
 {
 	int			lft;
 	int			lft_z;
@@ -35,7 +35,7 @@ typedef struct	s_number
 	t_ull		value;
 }				t_number;
 
-typedef struct	s_return_n
+typedef struct s_return_n
 {
 	char		*cp;
 	short		*sp;

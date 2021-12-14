@@ -6,11 +6,11 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 17:14:45 by youngpar          #+#    #+#             */
-/*   Updated: 2021/05/04 17:15:39 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/11 22:09:30 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);

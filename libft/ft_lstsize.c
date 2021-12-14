@@ -6,13 +6,13 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 02:18:16 by youngpar          #+#    #+#             */
-/*   Updated: 2021/05/10 19:01:44 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/11 22:26:03 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int		size;
 	t_list	*curr;

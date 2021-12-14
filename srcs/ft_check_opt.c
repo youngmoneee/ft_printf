@@ -6,23 +6,25 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 19:41:06 by youngpar          #+#    #+#             */
-/*   Updated: 2021/07/02 23:57:28 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/14 21:56:58 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-const char		*ft_check_flag(const char *str, t_option *opt)
+const char	*ft_check_flag(const char *str, t_option *opt)
 {
 	int		option;
 	int		tmp;
 
 	option = 0;
-	while ((tmp = is_flag(*str)))
+	tmp = is_flag(*str);
+	while (tmp)
 	{
 		if (!(option & tmp))
 			option += tmp;
 		str++;
+		tmp = is_flag(*str);
 	}
 	if ((option & 1) && (option & 8))
 		option -= 8;
@@ -30,18 +32,17 @@ const char		*ft_check_flag(const char *str, t_option *opt)
 	return (str);
 }
 
-const char		*ft_check_width(const char *str, t_option *opt, va_list *ap)
+const char	*ft_check_width(const char *str, t_option *opt, va_list *ap)
 {
 	int		flag;
 
 	flag = 1;
 	if (*str == '*')
-	{
-		if ((opt->width = va_arg(*ap, int)) < 0)
-			flag = -1;
-		str++;
-	}
+		opt->width = va_arg(*ap, int);
+	if ((opt->width < 0) && (*str++ == '*'))
+		flag = -1;
 	else
+	{
 		while (ft_isdigit(*str) || *str == '-')
 		{
 			if (*str == '-')
@@ -50,6 +51,7 @@ const char		*ft_check_width(const char *str, t_option *opt, va_list *ap)
 				opt->width = opt->width * 10 + *str - '0';
 			str++;
 		}
+	}
 	if (!(opt->flags & 1) && flag == -1)
 		opt->flags += 1;
 	if ((opt->flags & 1) && (opt->flags & 8))
@@ -58,7 +60,7 @@ const char		*ft_check_width(const char *str, t_option *opt, va_list *ap)
 	return (str);
 }
 
-const char		*ft_check_precision(const char *str, t_option *opt, va_list *ap)
+const char	*ft_check_precision(const char *str, t_option *opt, va_list *ap)
 {
 	int		flag;
 
@@ -74,7 +76,8 @@ const char		*ft_check_precision(const char *str, t_option *opt, va_list *ap)
 				opt->precision = opt->precision * 10 + *str++ - '0';
 		else if (*str == '*')
 		{
-			if ((opt->precision = va_arg(*ap, int)) < 0)
+			opt->precision = va_arg(*ap, int);
+			if (opt->precision < 0)
 				flag = -1;
 			str++;
 		}
@@ -84,7 +87,7 @@ const char		*ft_check_precision(const char *str, t_option *opt, va_list *ap)
 	return (str);
 }
 
-const char		*ft_check_length(const char *str, t_option *opt)
+const char	*ft_check_length(const char *str, t_option *opt)
 {
 	if (*str == 'l')
 	{
@@ -109,7 +112,7 @@ const char		*ft_check_length(const char *str, t_option *opt)
 	return (str);
 }
 
-const char		*ft_check_type(const char *str, t_option *opt)
+const char	*ft_check_type(const char *str, t_option *opt)
 {
 	if (*str == 'c')
 		opt->type = 'c';
@@ -127,7 +130,7 @@ const char		*ft_check_type(const char *str, t_option *opt)
 	else if (*str == 'u')
 		opt->type = 'u';
 	else if (*str == 'x' || *str == 'X')
-		opt->type = (*str == 'x' ? 'x' : 'X');
+		opt->type = *str;
 	else if (*str == '%')
 		opt->type = '%';
 	else if (*str == 'n')

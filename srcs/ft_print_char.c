@@ -6,13 +6,13 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 19:41:06 by youngpar          #+#    #+#             */
-/*   Updated: 2021/07/02 23:57:07 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:22:10 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-size_t		ft_print_c(t_option *opt, va_list *ap)
+size_t	ft_print_c(t_option *opt, va_list *ap)
 {
 	int					len;
 	int					c;
@@ -27,7 +27,7 @@ size_t		ft_print_c(t_option *opt, va_list *ap)
 	return (len);
 }
 
-size_t		ft_print_per(t_option *opt)
+size_t	ft_print_per(t_option *opt)
 {
 	int			len;
 
@@ -45,7 +45,7 @@ size_t		ft_print_per(t_option *opt)
 	return (len);
 }
 
-size_t		ft_print_s(t_option *opt, va_list *ap)
+size_t	ft_print_s(t_option *opt, va_list *ap)
 {
 	char		*c;
 	int			len;

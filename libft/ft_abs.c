@@ -6,11 +6,13 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 19:25:02 by youngpar          #+#    #+#             */
-/*   Updated: 2021/05/10 19:26:07 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/11 22:27:33 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_abs(int n)
+int	ft_abs(int n)
 {
-	return (n > 0 ? n : -n);
+	if (n > 0)
+		return (n);
+	return (-n);
 }

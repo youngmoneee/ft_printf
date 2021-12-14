@@ -6,13 +6,13 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:45:24 by youngpar          #+#    #+#             */
-/*   Updated: 2021/05/03 17:59:17 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/11 22:31:31 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 

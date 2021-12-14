@@ -6,13 +6,13 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 19:41:06 by youngpar          #+#    #+#             */
-/*   Updated: 2021/07/02 23:58:17 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/14 21:27:57 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int		ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	int			len;
 	va_list		ap;

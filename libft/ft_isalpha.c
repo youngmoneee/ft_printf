@@ -6,11 +6,11 @@
 /*   By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 21:36:22 by youngpar          #+#    #+#             */
-/*   Updated: 2021/05/05 21:36:30 by youngpar         ###   ########.fr       */
+/*   Updated: 2021/12/11 22:10:36 by youngpar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
